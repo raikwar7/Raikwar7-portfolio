@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Divyansh Raikwar | Software Engineer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
+</head>
+
+<body>
+    <header>
+        <div class="logo">DV</div>
+
+        <nav class="nav">
+            <ul class="nav-links">
+                <li><a href="#">About</a></li>
+                <li><a href="#">Portfolio</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Blog</a></li>
+            </ul>
+        </nav>
+
+        <!-- Hamburger -->
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#">About</a>
+        <a href="#">Portfolio</a>
+        <a href="#">Services</a>
+        <a href="#">Blog</a>
+    </div>
+
+    <section class="hero">
+        <div id="intro" class="hero-text">
+            <h1>Hello</h1>
+            <p class="intro-name">— Divyansh Raikwar</p>
+            <h2>
+                I’m a <span id="typing"></span>
+            </h2>
+        </div>
+
+        <div class="hero-img">
+            <img src="{{ url_for('static', filename='myprofilepic-removebg-preview.png') }}" alt="profile">
+
+        </div>
+    </section>
+    <!-- ABOUT -->
+    <section id="about" class="section hidden about">
+        <div class="about-card">
+            <span class="about-tag">About Me</span>
+
+            <p class="about-text">
+                Engineering undergraduate with strong experience in
+                <strong>Python, Java, React, FastAPI</strong>, and
+                <strong>AI-driven systems</strong>. I specialize in building production-ready, scalable applications with clean architecture and well-structured backend services.
+            </p>
+
+            <p class="about-text">
+                Actively interested in <strong>system design</strong>,
+                <strong>performance optimization</strong>, and writing maintainable code that scales in real-world environments.
+            </p>
+        </div>
+    </section>
+
+    <div class="container projects-container">
+        <h2 class="projects-title">
+            My Projects<i class="fas fa-laptop-code"></i>
+        </h2>
+
+        <div class="projects-grid">
+            {% for project in projects %}
+            <div class="card_box">
+                <span class="corner-ribbon"> </span>
+
+                <div class="card-content">
+                    <h3>{{ project.title }}</h3>
+                    <p class="desc">{{ project.description }}</p>
+
+                    <p class="tech">
+                        <strong>Tech:</strong> {{ project.tech_stack }}
+                    </p>
+
+                    <a href="{{ project.github_link }}" target="_blank" class="github-btn">
+          GitHub →
+        </a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <section id="skills" class="section hidden skills-section">
+        <h2>Skills</h2>
+
+        <div class="skills-grid">
+            <div class="skill">
+                <i class="devicon-python-plain"></i>
+                <span>Python</span>
+            </div>
+
+            <div class="skill">
+                <i class="devicon-java-plain"></i>
+                <span>Java</span>
+            </div>
+
+            <div class="skill">
+                <i class="devicon-javascript-plain"></i>
+                <span>JavaScript</span>
+            </div>
+
+            <div class="skill">
+                <i class="devicon-react-original"></i>
+                <span>React</span>
+            </div>
+
+            <div class="skill">
+                <i class="devicon-fastapi-plain"></i>
+                <span>FastAPI</span>
+            </div>
+
+            <div class="skill">
+                <i class="devicon-flask-original"></i>
+                <span>Flask</span>
+            </div>
+
+            <div class="skill">
+                <i class="devicon-mongodb-plain"></i>
+                <span>MongoDB</span>
+            </div>
+
+            <div class="skill">
+                <i class="devicon-mysql-plain"></i>
+                <span>MySQL</span>
+            </div>
+
+            <div class="skill">
+                <i class="devicon-amazonwebservices-original"></i>
+                <span>AWS</span>
+            </div>
+
+            <!-- EXTRA SKILLS -->
+            <div class="skill">
+                <i class="devicon-nodejs-plain"></i>
+                <span>Node.js</span>
+            </div>
+
+            <div class="skill">
+                <i class="devicon-git-plain"></i>
+                <span>Git</span>
+            </div>
+
+            <div class="skill">
+                <i class="devicon-docker-plain"></i>
+                <span>Docker</span>
+            </div>
+        </div>
+    </section>
+    <div class="quote-box">
+        <p>“Keep pushing forward, the best is yet to come!” <span class="smiley">😊</span></p>
+    </div>
+    <!-- CONTACT -->
+    <section id="contact" class="section hidden">
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:theraikwar7@gmail.com">theraikwar7@gmail.com</a></p>
+        <p>
+            <a href="https://github.com/raikwar7" target="_blank">GitHub</a> |
+            <a href="https://www.linkedin.com/in/divyansh-singh-raikwar-27ab18259" target="_blank">LinkedIn</a> |
+            <a href="https://leetcode.com/u/theraikwar7/" target="_blank">LeetCode</a>
+        </p>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        © 2026 Divyansh Raikwar
+    </footer>
+
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+
+</body>
+
+</html>
